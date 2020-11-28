@@ -3,6 +3,7 @@ package com.opensourcecms.demo.s1.stepdefinitions;
 import com.opensourcecms.demo.s1.certification.questions.TitlePost;
 import com.opensourcecms.demo.s1.certification.tasks.common.GoToMenuOption;
 import com.opensourcecms.demo.s1.certification.tasks.posts.CreatePosts;
+import com.opensourcecms.demo.s1.certification.userInterfaces.Menu;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
