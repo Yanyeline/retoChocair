@@ -23,10 +23,10 @@ public class GoToMenuOption implements Task {
     @Step("{0} go to application page")
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                MoveMouse.to(Menu.ICON_POSTS),
-                Click.on(Menu.OPTION_ADD_NEW_POST));
-                //Click.on(Menu.OPTION_POSTS),
-                //Click.on(Menu.OPTION_ADD_NEW_POST2));
+                MoveMouse.to(Menu.ICON_POSTS));
+
+        //Click.on(Menu.OPTION_POSTS),
+        //Click.on(Menu.OPTION_ADD_NEW_POST2));
     }
 
     public static GoToMenuOption theMenuOption() {
