@@ -4,10 +4,11 @@ import com.opensourcecms.demo.s1.certification.userInterfaces.Post;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
+import net.thucydides.core.annotations.Step;
 
 public class TitlePost implements Question<String> {
 
-
+    @Step("{0} Posts created")
     @Override
     public String answeredBy(Actor actor) {
 

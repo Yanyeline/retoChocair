@@ -4,19 +4,23 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
-public class NewPosts extends PageObject {
+public class EditPosts extends PageObject {
 
     public static Target TXT_TITLE = Target.the("").located(By.id("post-title-0"));
-    public static Target TXT_BLOCK_PARAGRAPH = Target.the("").located(By.xpath("//div[@id='wpbody-content']//textarea[@role='button']"));
-    public static Target TXT_COMPLETE_COMPONENT = Target.the("").located(By.xpath("//div[@class='components-autocomplete']//p"));
-    public static Target BTN_ADD_BLOCK = Target.the("").located(By.id("(//div[@class='editor-inserter block-editor-inserter']//button)[1]"));
+    public static Target TXT_BLOCK_PARAGRAPH = Target.the("").locatedBy("//div[@class='components-autocomplete']//p[contains(@class,'editor-rich-text')][1]");//(//div[contains(@class,'editor-block-list__block-edit')]//div[contains(@class,'text')])[1]
+    public static Target TXT_COMPLETE_COMPONENT = Target.the("").locatedBy("*//p[@role='textbox']");
 
     public static Target ICON_DISABLE_COMPONENTS = Target.the("").located(By.xpath("(//div[@class='components-popover__content']//button)[2]"));
 
+    public static Target BTN_ADD_BLOCK = Target.the("").located(By.xpath("//button[@aria-label='Add block']"));
+    public static Target BTN_ADD_BLOCK_PARAGRAPH = Target.the("").located(By.xpath("//button[@aria-label='Paragraph']"));
+
+
     public static Target OPTION_DOCUMENT = Target.the("").located(By.xpath("//button[contains(text(),'Document')]"));
 
-    //public static Target BTN_VISIBILITY = Target.the("").located(By.xpath("//div[@class='components-panel__row edit-post-post-visibility']//button"));
-    //public static Target OPTION_VISIBILITY = Target.the("").locatedBy("//div[@class='editor-post-visibility__choice']//label[contains(text(),'{0}')]//parent::div//input");
+    public static Target BTN_VISIBILITY = Target.the("").located(By.xpath("//div[@class='components-panel__row edit-post-post-visibility']//button"));
+    public static Target OPTION_VISIBILITY = Target.the("").locatedBy("//div[@class='editor-post-visibility__choice']//label[contains(text(),'{0}')]//parent::div//input");
+
 
     public static Target OPTION_PUBLISH = Target.the("").located(By.xpath("//div[@class='components-panel__row edit-post-post-schedule']//button"));
     public static Target TXT_DAY = Target.the("").located(By.xpath("//div[@class='components-popover__content']//input[contains(@class,'_time-field-day')]"));
@@ -46,12 +50,12 @@ public class NewPosts extends PageObject {
     public static Target OPTION_EXERPT = Target.the("").located(By.xpath("//button[contains(text(),'Excerpt')]"));
     public static Target TXT_EXERPT = Target.the("").located(By.xpath("//textarea[@class='components-textarea-control__input']"));
 
-    public static Target BTN_PUBLISH = Target.the("").located(By.xpath("(//button[contains(text(),'Publis')])[1]"));
-    public static Target BTN_PUBLISH2 = Target.the("").located(By.xpath("(//button[contains(text(),'Publis')])[2]"));
+    public static Target BTN_PUBLISH = Target.the("").located(By.xpath("(//div[@class='edit-post-header__settings']//button[contains(@class,'editor-post-publish')])[1]"));//(//button[contains(text(),'Publis')])[1]
+    public static Target BTN_PUBLISH2 = Target.the("").located(By.xpath("(//div[@class='edit-post-header__settings']//button[contains(@class,'editor-post-publish')])[2]"));//(//div[@class='edit-post-header__settings']//button[contains(@class,'editor-post-publish')])
 
-    public static Target BTN_VISIBILITY = Target.the("").located(By.xpath("//div[@class='editor-post-publish-panel__content']//button[contains(text(),'Visibility')]"));
-    public static Target OPTION_VISIBILITY = Target.the("").locatedBy("//label[contains(text(),'{0}')]");
+    // public static Target BTN_VISIBILITY = Target.the("").located(By.xpath("//div[@class='editor-post-publish-panel__content']//button[contains(text(),'Visibility')]"));
+    // public static Target OPTION_VISIBILITY = Target.the("").locatedBy("//label[contains(text(),'{0}')]");
 
-    public static Target BTN_VIEW_POST = Target.the("").locatedBy("//div[@class='post-publish-panel__postpublish-buttons']//a[contains(text(),'View Post')]");
+    public static Target BTN_VIEW_POST = Target.the("").locatedBy("//div[@class='components-notice__content']//a[contains(text(),'View Post')]");
 
 }

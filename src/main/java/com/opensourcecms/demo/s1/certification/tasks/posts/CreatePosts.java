@@ -1,6 +1,7 @@
 package com.opensourcecms.demo.s1.certification.tasks.posts;
 
 import com.opensourcecms.demo.s1.certification.tasks.common.Wait;
+import com.opensourcecms.demo.s1.certification.userInterfaces.Menu;
 import com.opensourcecms.demo.s1.certification.userInterfaces.NewPosts;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
@@ -24,13 +25,14 @@ public class CreatePosts implements Task {
         this.datos = datos;
     }
 
-    @Step("{0} enter registration data")
+    @Step("{0} Fill fields to create posts")
     @Override
     public <T extends Actor> void performAs(T actor) {
 
 
         actor.attemptsTo(
-                //   Driver.toFrame(0),
+
+                Click.on(Menu.OPTION_ADD_NEW_POST),
                 Wait.Element(NewPosts.ICON_DISABLE_COMPONENTS),
                 Click.on(NewPosts.ICON_DISABLE_COMPONENTS),
                 Enter.theValue(datos.get(0).get("title")).into(NewPosts.TXT_TITLE),
